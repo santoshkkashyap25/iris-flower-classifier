@@ -1,5 +1,12 @@
 # Iris Flower Species Predictor
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Render-00c7b7?style=for-the-badge&logo=render&logoColor=white)](https://flotect.onrender.com/)
+[![Python](https://img.shields.io/badge/Python-3.11+-blue.svg?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Flask](https://img.shields.io/badge/Flask-3.0+-black.svg?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
+[![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-1.4+-orange.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
+
+🔗 **Live Application:** [https://flotect.onrender.com/](https://flotect.onrender.com/)
+
 An interactive machine learning web application built with **Flask** and **Scikit-Learn** that predicts the species of an Iris flower based on its sepal and petal measurements.
 
 The application features a modern botanical user interface, real-time input sliders with quick-archetype presets, a trained Scikit-Learn classification pipeline (`StandardScaler` + `LogisticRegression`), a dedicated JSON REST API, and an automated test suite.
@@ -31,6 +38,7 @@ iris_app/
 ├── train_model.py      # ML pipeline training and evaluation script
 ├── iris.pkl            # Trained model pipeline artifact
 ├── requirements.txt    # Python dependencies
+├── Procfile            # Deployment command for Render
 ├── .gitignore          # Git ignore rules
 ├── templates/          # Jinja2 HTML templates
 │   ├── base.html       # Shared base layout with modern typography
