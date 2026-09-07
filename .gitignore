@@ -18,7 +18,7 @@ env/
 Thumbs.db       # Windows thumbnail cache
 
 *.log
-!app.log        # Exclude specific log files if you want to inspect them, but generally ignored
+
 
 .env
 .flaskenv
