@@ -1,11 +1,11 @@
 # Iris Flower Species Predictor
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Render-00c7b7?style=for-the-badge&logo=render&logoColor=white)](https://flotect.onrender.com/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-PythonAnywhere-1D89E4?style=for-the-badge&logo=pythonanywhere&logoColor=white)](https://santoshkkashyap25.pythonanywhere.com/)
 [![Python](https://img.shields.io/badge/Python-3.11+-blue.svg?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![Flask](https://img.shields.io/badge/Flask-3.0+-black.svg?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
 [![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-1.4+-orange.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
 
-🔗 **Live Application:** [https://flotect.onrender.com/](https://flotect.onrender.com/)
+🔗 **Live Application:** [https://santoshkkashyap25.pythonanywhere.com/](https://santoshkkashyap25.pythonanywhere.com/)
 
 An interactive machine learning web application built with **Flask** and **Scikit-Learn** that predicts the species of an Iris flower based on its sepal and petal measurements.
 
@@ -56,8 +56,8 @@ iris_app/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/santoshkkashyap25/iris_app.git
-cd iris_app
+git clone https://github.com/santoshkkashyap25/iris-flower-classifier.git
+cd iris-flower-classifier
 ```
 
 ### 2. Create and Activate Virtual Environment
