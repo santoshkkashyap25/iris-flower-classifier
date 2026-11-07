@@ -12,7 +12,12 @@ _model = None
 _model_lock = threading.Lock()
 
 def load_iris_model(model_path=None):
-    """Thread-safe loader for the trained Iris classification model."""
+    """Thread-safe loader for the trained Iris classification model.
+    
+    If the model file is missing or cannot be unpickled (e.g. due to a
+    scikit-learn version mismatch), it automatically retrains a fresh
+    model for the current environment.
+    """
     global _model
     if model_path is None:
         model_path = Config.MODEL_PATH
@@ -22,15 +27,23 @@ def load_iris_model(model_path=None):
             if _model is None:
                 logger.info(f"Loading model from: {model_path}")
                 if not os.path.exists(model_path):
-                    logger.error(f"Model file not found at {model_path}. Please run train_model.py first.")
-                    raise FileNotFoundError(f"Model file not found at {model_path}")
+                    logger.warning(f"Model file not found at {model_path}. Auto-training fresh model...")
+                    from train_model import train_and_save_model
+                    train_and_save_model()
                 try:
                     with open(model_path, 'rb') as file:
                         _model = pickle.load(file)
                     logger.info("Iris model pipeline loaded successfully.")
                 except Exception as e:
-                    logger.error(f"Error loading model from {model_path}: {e}")
-                    raise RuntimeError(f"Failed to load model: {e}")
+                    logger.warning(
+                        f"Error unpickling model from {model_path} ({e}). "
+                        f"Retraining compatible model for this environment..."
+                    )
+                    from train_model import train_and_save_model
+                    train_and_save_model()
+                    with open(model_path, 'rb') as file:
+                        _model = pickle.load(file)
+                    logger.info("Freshly trained Iris model pipeline loaded successfully.")
     return _model
 
 def get_feature_names():
